@@ -1,0 +1,44 @@
+{
+  "name": "frontend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "vite preview",
+    "build": "vite build",
+    "lint": "eslint . --fix",
+    "dev": "vite",
+    "format": "prettier --write src/",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mdi/font": "5.9.55",
+    "axios": "^1.7.9",
+    "lucide-vue-next": "^0.474.0",
+    "pinia": "^2.3.0",
+    "roboto-fontface": "*",
+    "sockjs-client": "^1.6.1",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0",
+    "vuetify": "^3.7.6",
+    "webfontloader": "^1.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.14.0",
+    "@types/node": "^22.13.1",
+    "@vitejs/plugin-vue": "^4.6.2",
+    "@vue/eslint-config-prettier": "^10.1.0",
+    "eslint": "^9.14.0",
+    "eslint-plugin-vue": "^9.30.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.7.3",
+    "vite": "^5.2.0",
+    "vite-plugin-vue-devtools": "^7.6.8",
+    "vite-plugin-vuetify": "^2.1.0",
+    "vue-cli-plugin-vuetify": "~2.5.8"
+  },
+  "type": "module",
+  "description": "This template should help get you started developing with Vue 3 in Vite.",
+  "main": "eslint.config.js",
+  "author": "",
+  "license": "ISC"
+}

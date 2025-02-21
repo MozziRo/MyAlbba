@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowJs": true,  // JavaScript 파일 허용
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": ["node", "vue"]
+  },
+  "include": [
+    "src/**/*.ts",           // 모든 TypeScript 파일
+    "src/**/*.d.ts",         // 모든 타입 선언 파일
+    "src/**/*.tsx",          // TypeScript JSX 파일
+    "src/**/*.vue",          // 모든 Vue 컴포넌트
+    "src/common/types/**/*"        // types 디렉토리의 모든 파일
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+} 

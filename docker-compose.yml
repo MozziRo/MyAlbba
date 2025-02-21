@@ -1,0 +1,67 @@
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile
+    container_name: pjt-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - /etc/letsencrypt:/etc/letsencrypt
+    environment:
+      - VITE_APP_API_URL=https://i12a304.p.ssafy.io/api
+      - VITE_APP_WS_URL=https://i12a304.p.ssafy.io/ws
+      - VITE_APP_PURE_URL=https://i12a304.p.ssafy.io
+    entrypoint: ["/docker-entrypoint.sh"]
+
+  backend:
+    build: ./Back
+    container_name: pjt-backend
+    ports:
+      - "8080:8080"
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/mydb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
+      SPRING_DATASOURCE_USERNAME: myuser
+      SPRING_DATASOURCE_PASSWORD: mypassword
+    networks:
+      - app-network
+
+  mysql:
+    image: mysql:8.0
+    container_name: pjt-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  fastapi:
+    build: ./fastapi-server  
+    container_name: pjt-fastapi
+    ports:
+      - "8000:8000"
+    restart: always
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
+
