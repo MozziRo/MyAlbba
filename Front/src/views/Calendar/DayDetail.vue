@@ -383,8 +383,8 @@ onMounted(async () => {
 }
 
  .schedule-item.morning {
-  background: rgba(249, 177, 122, 0.12);  
-  border-left: 3px solid #fc7d06;
+  background: rgba(251, 160, 91, 0.12);  
+  border-left: 3px solid #F9B17A;
 }
 
 .name-tag.afternoon {
@@ -392,7 +392,7 @@ onMounted(async () => {
 }
 
 .name-tag.morning {
-  color: #f78418;
+  color: #424769;
 }
 
 .time {
@@ -404,7 +404,7 @@ onMounted(async () => {
 }
 
 .time.morning {
-  color:  #fc7d06;
+  color:  #424769;
 }
 
 .schedule-actions {

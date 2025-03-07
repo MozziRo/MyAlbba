@@ -49,7 +49,7 @@ const isLoading = ref(false)
 const isModalOpen = ref(false)
 
 const buttonText = computed(() => {
-  return props.status === 'DONE' ? '메일발송됨됨' : '정산완료'
+  return props.status === 'DONE' ? '메일발송완료' : '정산완료'
 })
 
 

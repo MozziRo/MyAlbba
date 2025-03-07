@@ -74,8 +74,15 @@ const goToSalary = () => {
   padding: 0 1.5rem;
 }
 
+.widget {
+  /* 모든 위젯이 똑같은 공간을 차지하도록 설정 */
+  width: 100%;
+  max-width: none;
+}
+
 .feature-card {
   height: 375px;
+  width: 100%; /* 모든 카드가 동일한 너비를 가지도록 설정 */
   background: white;
   padding: 1.5rem;
   border-radius: 30px;
@@ -84,6 +91,8 @@ const goToSalary = () => {
   transition: transform 0.2s;
   border: 1px solid #e3e3e3;
   box-shadow: 0 5px 10px rgba(66, 71, 105, 0.2);
+  /* 카드 크기를 고정 */
+  box-sizing: border-box;
 }
 
 .feature-card:hover {

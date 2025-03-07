@@ -14,7 +14,7 @@
       </div>
       <div class="text-center">
         <span class="text-5xl emoji">🤔</span>
-        <p class="font-semibold">아쉬워요요 <br/> {{ formatScore(sentiment.sentiment_scores.neg) }}</p>
+        <p class="font-semibold">아쉬워요 <br/> {{ formatScore(sentiment.sentiment_scores.neg) }}</p>
       </div>
     </div>
   </div>

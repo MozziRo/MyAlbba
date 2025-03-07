@@ -1,4 +1,3 @@
-<!-- DateCell.vue -->
 <template>
   <div
     class="calendar-cell"
@@ -15,8 +14,7 @@
   >
     <div class="cell-content">
       <div class="cell-header">
-        <span class="date-number">{{ dayInfo.date.getDate() }}</span>
-        <span v-if="isTodayDate" class="today-marker">오늘</span>
+        <span class="date-number" :class="{ 'today-circle': isTodayDate }">{{ dayInfo.date.getDate() }}</span>
         <Bell
           v-if="memberStore.isWorker && hasSubstituteRequests(dayInfo.date)"
           class="notification-icon"
@@ -220,15 +218,20 @@ onMounted(async () => {
   font-size: 1rem;
   font-weight: 500;
   color: #2D3250;
+  position: relative;
 }
 
-.today-marker {
-  font-size: 0.75rem;
-  padding: 0.125rem 0.375rem;
-  background: rgba(249, 177, 122, 0.15);
-  color: #f97b1a;
-  border-radius: 9999px;
-  font-weight: 500;
+/* 오늘 날짜 표시를 동그라미로 변경 */
+.date-number.today-circle {
+  width: 28px;
+  height: 28px;
+  background-color: #ff9747;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 350;
 }
 
 .notification-icon {
@@ -264,8 +267,8 @@ onMounted(async () => {
 }
 
 .schedule-item.morning {
-  background: rgba(249, 177, 122, 0.12);  /* 연한 코랄 */
-  color: #fc7914dd;
+  background: rgba(255, 137, 46, 0.12);  /* 연한 코랄 */
+  color: #424769;
   border-left: 2px solid #F9B17A;
 }
 
@@ -369,20 +372,27 @@ onMounted(async () => {
     font-size: 0.875rem;
   }
 
+  .date-number.today-circle {
+    width: 24px;
+    height: 24px;
+    font-size: 0.875rem;
+  }
+
   .schedule-item {
     padding: 0.25rem;
     font-size: 0.7rem;
-  }
-
-  .today-marker {
-    font-size: 0.65rem;
-    padding: 0.1rem 0.25rem;
   }
 }
 
 @media (max-width: 480px) {
   .calendar-cell {
     min-height: 80px;
+  }
+
+  .date-number.today-circle {
+    width: 22px;
+    height: 22px;
+    font-size: 0.8rem;
   }
 
   .schedule-name {

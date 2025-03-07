@@ -29,8 +29,6 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue';
-
 const props = defineProps({
   memo: {
     type: Object,
@@ -57,7 +55,7 @@ const emitUpdateStatus = () => {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(45, 50, 80, 0.6);  /* Primary dark with opacity */
+  background: rgba(45, 50, 80, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,9 +66,9 @@ const emitUpdateStatus = () => {
   background: white;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(66, 71, 105, 0.1);  /* Primary color shadow */
-  width: 90%;
-  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(66, 71, 105, 0.1);
+  /* width: 300px; */
+  /* max-width: 90%; */
   text-align: center;
   z-index: 1001;
 }
@@ -91,7 +89,7 @@ const emitUpdateStatus = () => {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   min-width: 100px;
-  background-color: #9E9E9E;  /* Neutral dark */
+  background-color: #9E9E9E;
   color: white;
   border: none;
   border-radius: 4px;
@@ -100,14 +98,14 @@ const emitUpdateStatus = () => {
 }
 
 .modal-left-btn:hover {
-  background-color: #676F9D;  /* Primary light */
+  background-color: #676F9D;
 }
 
 .modal-right-btn {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   min-width: 100px;
-  background-color: #424769;  /* Primary color */
+  background-color: #424769;
   color: white;
   border: none;
   border-radius: 4px;
@@ -116,6 +114,6 @@ const emitUpdateStatus = () => {
 }
 
 .modal-right-btn:hover {
-  background-color: #2D3250;  /* Primary dark */
+  background-color: #2D3250;
 }
 </style>
